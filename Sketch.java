@@ -42,7 +42,23 @@ public class Sketch extends PApplet {
   }
 
   public void setup() {
-    background(210, 255, 173);
+    background(black);
+
+    // Load images
+    imgBananaDundun = loadImage("Bananadundun.png");
+    imgSkyBackground = loadImage("Skybackground.jpg");
+    imgOriginalDundun = loadImage("Originaldundun.png");
+
+    // Edit image sizes
+    imgBananaDundun.resize(imgBananaDundun.width / 2, imgBananaDundun.height / 2);
+    imgSkyBackground.resize(imgSkyBackground.width * width / 200, imgSkyBackground.height * height / 150);
+    imgOriginalDundun.resize(imgOriginalDundun.width / 3, imgOriginalDundun.height / 3);
+
+    // Define variables for circular motion
+    fltOriginalX = width / 3;
+    fltOriginalY = height / 3;
+    fltOriginalRadius = 150;
+    fltOriginalRadian = 50;
   }
 
   public void draw() {
